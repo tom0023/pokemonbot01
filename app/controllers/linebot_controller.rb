@@ -1,10 +1,7 @@
 class LinebotController < ApplicationController
   require 'line/bot'  # gem 'line-bot-api'
-  #require 'sinatra' #なくても動く
-
   # callbackアクションのCSRFトークン認証を無効
   protect_from_forgery :except => [:callback]
-
   # LINE Developers登録完了後に作成される環境変数の認証
   def client
     @client ||= Line::Bot::Client.new { |config|
@@ -14,21 +11,14 @@ class LinebotController < ApplicationController
   end
 
   def callback
-    #body = "フシギダネ"←ここは文字列じゃダメ JSONっぽい
     body = request.body.read
-
-    #LINEから送られたものか検証。ここは消せないっぽい
+    #LINEから送られたものか検証。
     signature = request.env['HTTP_X_LINE_SIGNATURE']
     unless client.validate_signature(body, signature)
       head :bad_request
     end
 
     events = client.parse_events_from(body)
-    #events = client.parse_events_from("フシギダネ\nH:45\nA:45\nB:45\nC:65\nD:65\nS:45\n\n弱点\nほのお、ひこう、こおり、エスパー\n特性\nしんりょく、ようりょくそ")
-    #これもダメ
-
-    #@pokemon = Pokemon.find(1)
-    #events = @pokemon.name
 
     # evnets内のtypeを識別していく。
     events.each { |event|
@@ -38,18 +28,35 @@ class LinebotController < ApplicationController
         # 今回はメッセージに対応する処理を行うため、type: "text"の場合処理をする。
         # 例えば位置情報に対応する処理を行うためには、MessageType::Locationとなる。
         when Line::Bot::Event::MessageType::Text
-          message = {
-            type: 'text',
-            #text: @pokemon.name
-            #text: "フシギダネ\nH:45\nA:45\nB:45\nC:65\nD:65\nS:45\n\n弱点\nほのお、ひこう、こおり、エスパー\n特性\nしんりょく、ようりょくそ"
-            text: event.message['text']
-          }
-          # 応答メッセージを送る
-          client.reply_message(event['replyToken'], message)
+          @pokemon = Pokemon.where("name LIKE(?) or rename LIKE(?)", "%#{event.message['text']}%", "%#{event.message['text']}%")
+          #ヒットしたかしなかったかで分岐
+          if @pokemon != []
+            #ヒット数が一つか複数かで分岐
+            if @pokemon.length == 1
+              @pokemon = @pokemon[0]
+              message = {
+                type: 'text',
+                text: "#{@pokemon.name}\nタイプ：#{@pokemon.type}\nH：#{@pokemon.h}\nA：#{@pokemon.a}\nB：#{@pokemon.b}\nC：#{@pokemon.c}\nD：#{@pokemon.d}\nS：#{@pokemon.s}\n特性\n#{@pokemon.ability}"
+                #text: event.message['text']オウム返ししたければこれ
+              }
+              client.reply_message(event['replyToken'], message)
+            elsif @pokemon.length > 1
+              messages = []
+              @pokemon.each do |pokemon|
+                messages << {type: 'text',text: "#{pokemon.name}\nタイプ：#{pokemon.type}\nH：#{pokemon.h}\nA：#{pokemon.a}\nB：#{pokemon.b}\nC：#{pokemon.c}\nD：#{pokemon.d}\nS：#{pokemon.s}\n特性\n#{pokemon.ability}"}
+              end
+              client.reply_message(event['replyToken'], messages)
+            end
+          else
+            message = {
+              type: 'text',
+              text: "そんなポケモンいないよ！"
+            }
+            client.reply_message(event['replyToken'], message)
+          end
         end
       end
     }
-
     head :ok
   end
 end
