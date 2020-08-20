@@ -1,24 +1,31 @@
-# README
+・アプリ名
+ポケモンBOT
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+・概要(このアプリでできることを書いて下さい)
+LINE BOT を利用したポケモンデータ検索
 
-Things you may want to cover:
+・本番環境(デプロイ先　テストアカウント＆ID)
 
-* Ruby version
 
-* System dependencies
+・制作背景(意図)
+　⇒どんな課題や不便なことを解決するためにこのアプリを作ったのか。
+ネット対戦で長く盛り上がりを見せているポケモン。
+ターン制の対戦ゲームになりますが、コマンド入力に制限時間が設けられており知識量の差がアドバンテージとなってしまいます。
+その差を埋めるためにLINE BOTのレスポンスの速さを利用した対戦用ツールです。
+ネット実況者も対戦中の急な情報収集にはブラウザ検索を使用しており、
+実際の現場でも利用価値のあるものになったと思います。
 
-* Configuration
+・DEMO(gifで動画や写真を貼って、ビューのイメージを掴んでもらいます)
+　⇒特に、デプロイがまだできていない場合はDEMOをつけることで見た目を企業側に伝えることができます。
 
-* Database creation
+・工夫したポイント
 
-* Database initialization
 
-* How to run the test suite
+・使用技術(開発環境)
+LINE BOT
+MESSAGE API
 
-* Services (job queues, cache servers, search engines, etc.)
+・課題や今後実装したい機能
+ボタンで詳細情報の取得
 
-* Deployment instructions
-
-* ...
+・DB設計

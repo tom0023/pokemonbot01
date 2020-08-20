@@ -58,3 +58,5 @@ gem 'line-bot-api'
 gem 'dotenv-rails'
 
 gem 'pry-rails'
+
+gem 'seed_dump'
