@@ -917,7 +917,7 @@ Pokemon.create!([
   {name: "ゼラオラ", type: "でんき", h: "88", a: "112", b: "75", c: "102", d: "80", s: "143", ability: "ちくでん", rename: "ぜらおら"},
   {name: "メルタン", type: "はがね", h: "46", a: "65", b: "65", c: "55", d: "35", s: "34", ability: "じりょく", rename: "めるたん"},
   {name: "メルメタル", type: "はがね", h: "135", a: "143", b: "143", c: "80", d: "65", s: "34", ability: "てつのこぶし", rename: "めるめたる"},
-  {name: "サルノリ", type: "くさ", h: "135", a: nil, b: nil, c: nil, d: nil, s: nil, ability: nil, rename: "さるのり"},
+  {name: "サルノリ", type: "くさ", h: nil, a: nil, b: nil, c: nil, d: nil, s: nil, ability: nil, rename: "さるのり"},
   {name: "バチンキー", type: "くさ", h: nil, a: nil, b: nil, c: nil, d: nil, s: nil, ability: nil, rename: "ばちんきー"},
   {name: "ゴリランダー", type: "くさ", h: nil, a: nil, b: nil, c: nil, d: nil, s: nil, ability: nil, rename: "ごりらんだー"},
   {name: "ヒバニー", type: "ほのお", h: nil, a: nil, b: nil, c: nil, d: nil, s: nil, ability: nil, rename: "ひばにー"},
