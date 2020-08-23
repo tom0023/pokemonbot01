@@ -13,7 +13,7 @@ LINEBOTを利用したポケモンデータ検索<br>
 データベースの差し替えで様々なケースに対応できる可能性を秘めております。<br><br>
 
 
-！ [QRコード](https://i.gyazo.com/6b86a7e0ab032aa66fd6dd99c97ab358.png)
+！[QRコード](https://i.gyazo.com/6b86a7e0ab032aa66fd6dd99c97ab358.png)
 <br>
 
 # 制作物語
