@@ -1,5 +1,5 @@
 # アプリ名
-## PokemonBot
+**PokemonBot**
 
 # 概要
 LINEBOTを利用したポケモンデータ検索<br>
