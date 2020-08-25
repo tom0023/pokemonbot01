@@ -15,7 +15,7 @@ LINEBOTを利用したポケモンデータ検索<br>
 # 制作物
 下記のQRコードから友達登録でご使用いただけます
 
-！[QRコード](https://i.gyazo.com/6b86a7e0ab032aa66fd6dd99c97ab358.png)
+![QRコード](https://i.gyazo.com/6b86a7e0ab032aa66fd6dd99c97ab358.png)
 <br><br>
 
 # 制作物語
