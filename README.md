@@ -67,14 +67,15 @@ postgresqlのシートからデータを読み込める機能を利用し<br>
 
 
 ## 使用技術(開発環境)
-LINE BOT<br>
-MESSAGE API<br>
+LINE BOT  MESSAGE API<br>
 ngrok<br>
 heroku<br>
 <br><br>
 
 ## 課題や今後実装したい機能
-・見やすい表示<br>
-・ボタン入力でさらに詳しい情報の取得<br>
-強いて言えば上記の二点ですが、必要最低限の機能は備えているので<br>
-レスポンスに影響のない範囲で手を加えていこうと思います。
+・AWS
+・Docker
+・CircleCI
+
+・他情報データ追加<br>
+  レスポンスメッセージクリックでさらに情報検索<br>
