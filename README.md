@@ -19,6 +19,24 @@ LINEBOTを利用したポケモンデータ検索<br>
 ![QRコード](https://i.gyazo.com/6b86a7e0ab032aa66fd6dd99c97ab358.png)
 <br><br>
 
+## 使用技術(開発環境)
+LINE BOT  MESSAGE API<br>
+ngrok<br>
+Heroku<br>
+postgresql<br>
+<br><br>
+
+## 課題や今後実装したい機能
+Herokuデプロイの関係で初回起動に10秒程必要としてしまう。<br>
+対戦において多少駆け引きの考えられるレベルを想定しているので、<br>
+完全初心者に向けた情報検索機能を追加する。<br><br>
+・AWS<br>
+・Docker<br>
+・CircleCI<br><br>
+
+・他情報データ追加<br>
+  レスポンスメッセージクリックでさらに情報検索<br><br><br>
+
 ## 制作物語
 もはや国民的キャラクターとなるポケモン。<br>
 1996年にゲームボーイで「収集、育成、対戦、交換」の要素を加えたRPGとして発売され、<br>
@@ -63,19 +81,4 @@ LINEBOTを利用したポケモンデータ検索<br>
 拾えたデータを使いエクセルでシートを作成、<br>
 postgresqlのシートからデータを読み込める機能を利用し<br>
 エクセル → postgresql → seeds.rb で読み込める形に変換、<br>
-デプロイ後、本番環境のデータベースに反映させるという手段に結果至りました。<br><br><br>
-
-
-## 使用技術(開発環境)
-LINE BOT  MESSAGE API<br>
-ngrok<br>
-heroku<br>
-<br><br>
-
-## 課題や今後実装したい機能
-・AWS
-・Docker
-・CircleCI
-
-・他情報データ追加<br>
-  レスポンスメッセージクリックでさらに情報検索<br>
+デプロイ後、本番環境のデータベースに反映させるという手段に結果至りました。<br>
