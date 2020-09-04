@@ -16,10 +16,11 @@ LINEBOTを利用したポケモンデータ検索<br>
 また同じような局地的利用目的であれば、<br>
 データベースの差し替えで様々なケースに対応できる可能性を秘めております。<br><br>
 
+<img src="https://i.gyazo.com/88f32310781cbad9763ba2c7625ab554.png" width="35%">
+
 ## 制作物
 下記のQRコードから友達登録でご使用いただけます
-
-![QRコード](https://i.gyazo.com/6b86a7e0ab032aa66fd6dd99c97ab358.png)
+<img src="https://i.gyazo.com/6b86a7e0ab032aa66fd6dd99c97ab358.png" width="50%">
 <br><br>
 
 ## 使用技術(開発環境)
