@@ -37,7 +37,6 @@ class LinebotController < ApplicationController
               message = {
                 type: 'text',
                 text: "#{@pokemon.name}\nタイプ：#{@pokemon.type}\nH：#{@pokemon.h}\nA：#{@pokemon.a}\nB：#{@pokemon.b}\nC：#{@pokemon.c}\nD：#{@pokemon.d}\nS：#{@pokemon.s}\n特性\n#{@pokemon.ability}"
-                #text: event.message['text']オウム返ししたければこれ
               }
               client.reply_message(event['replyToken'], message)
             elsif @pokemon.length > 1
